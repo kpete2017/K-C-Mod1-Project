@@ -1,13 +1,15 @@
-require 'pry'
+
 class MainMenu
     def initialize
         system "clear"
+        system "printf '\e[8;100;110t'" 
         prompt = TTY::Prompt.new
         banner = File.read "bannerfile.txt"
         puts banner.colorize :light_blue
+        menu_banner = File.read "menubanner.txt"
 
 
-        choice = prompt.select("  MAIN MENU") do |menu|
+        choice = prompt.select(menu_banner) do |menu|
             menu.choice 'New Game'
             menu.choice 'New Player'
             menu.choice 'Leaderboard'
@@ -16,15 +18,13 @@ class MainMenu
 
  
         if choice == 'New Game'
-            HangmanGame.new
-        end
-        if choice == "New Player"
+            CatagoryChoice.new
+        elsif choice == "New Player"
             intro
-        end
-        if choice == "Leaderboard"
+        elsif choice == "Leaderboard"
             "Future Leaderboard"
-        end
-        if choice == "EXIT"
+        elsif choice == "EXIT"
+            system 'exit'
             system 'clear'
         end
     end    
