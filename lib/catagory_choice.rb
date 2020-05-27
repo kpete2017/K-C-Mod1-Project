@@ -1,5 +1,7 @@
 class CatagoryChoice
-    def initialize
+    def initialize main_menu, player
+        @player = player
+        @main_menu = main_menu
         system 'clear'
         @prompt = TTY::Prompt.new
         @banner = File.read "bannerfile.txt"
@@ -70,6 +72,6 @@ class CatagoryChoice
         elsif choice == 'Universities'
             answer = Faker::University.name
         end
-    HangmanGame.new answer
+    HangmanGame.new answer, main_menu, player
     end
 end

@@ -1,10 +1,14 @@
+require 'pry'
 class HangmanGame
 
-  def initialize answer_word
+  def initialize answer_word, main_menu, player
+    @player = player
+    @main_menu = main_menu
     @prompt = TTY::Prompt.new
     @banner = File.read "bannerfile.txt"
     @hangman = build_hangman
     @answer_word = answer_word
+    binding.pry
     @wrong_guesses = []
     @correct_guesses = []
     @hangman_position = 0
@@ -27,7 +31,7 @@ class HangmanGame
   end
 
   def check_if_won
-    @check_win_word = @answer_word.split("").collect(&:strip).reject{|element| element.empty?}
+    @check_win_word = @answer_word.downcase.split("").collect(&:strip).reject{|element| element.empty?}
     if @check_win_word.all? { |letters| @correct_guesses.include?(letters) }
       win_game
     end
@@ -45,8 +49,7 @@ class HangmanGame
   end
 
   def split_word
-    @answer_word.downcase
-    @answer_word.split("")
+    @answer_word.downcase.split("")
   end
 
   def check_if_valid
@@ -95,6 +98,9 @@ class HangmanGame
     win_banner = File.read "win_banner.txt"
     puts win_banner.colorize :green
     puts " The answer was #{@answer_word.titleize}"
+    if @player != "Guest"
+      @player.score += 1
+    end
     play_again?
   end
 
@@ -108,9 +114,9 @@ class HangmanGame
   def play_again?
     answer = @prompt.yes? "Play Again?"
     if answer
-      CatagoryChoice.new
+      CatagoryChoice.new @main_menu, @player
     else
-      MainMenu.new
+      @main_menu.show_main_menu
     end
   end
 
