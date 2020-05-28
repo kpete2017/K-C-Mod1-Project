@@ -1,3 +1,4 @@
+
 class MainMenu
     def initialize leaderboard, player = "Guest"
         @player = player
@@ -14,17 +15,22 @@ class MainMenu
         menu_banner = File.read "menubanner.txt"
 
         choice = prompt.select(menu_banner) do |menu|
-            menu.choice 'New Game'
-            menu.choice 'New Player'
+            menu.choice 'Play As Guest'
+            menu.choice 'Play As New Player'
+            menu.choice 'Play As Existing Player'
             menu.choice 'Leaderboard'
             menu.choice 'EXIT'
         end
 
-
-        if choice == 'New Game'
+        if choice == 'Play As Guest'
             CatagoryChoice.new self, @player
-        elsif choice == "New Player"
+        elsif choice == "Play As New Player"
             NewPlayer.new @leaderboard, self
+        elsif choice == "Play As Existing Player"
+            puts "Please Enter Your Name"
+            player_search = gets.chomp
+            @player = @leaderboard.find_player player_search
+            CatagoryChoice.new self, @player
         elsif choice == "Leaderboard"
             @leaderboard.show_leaderboard self
         elsif choice == "EXIT"

@@ -17,6 +17,15 @@ class Leaderboard
         answer = @prompt.yes? "Main Menu?"
         if answer
             @main_menu.show_main_menu
+        else
+            system 'clear'
+            system 'exit'
+        end
+    end
+
+    def find_player player_search
+        @all_players.find do |player| 
+            player.name == player_search 
         end
     end
 

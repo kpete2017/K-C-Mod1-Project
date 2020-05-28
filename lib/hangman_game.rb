@@ -8,7 +8,6 @@ class HangmanGame
     @banner = File.read "bannerfile.txt"
     @hangman = build_hangman
     @answer_word = answer_word
-    binding.pry
     @wrong_guesses = []
     @correct_guesses = []
     @hangman_position = 0
@@ -19,6 +18,11 @@ class HangmanGame
   def play_game
     system 'clear'
     puts @banner.colorize :light_blue
+    puts "RULES:"
+    puts "ONLY ONE LETTER AT A TIME CAN BE GUESSED"
+    puts "GUESSES MUST BE IN LOWERCASE"
+    puts "THE GAME WILL BE LOST AFTER 6 WRONG GUESSES"
+    puts "COMPLETE THE PHRASE TO WIN THE GAME"
     print_hangman
     print_progress
     print_wrong_guesses
@@ -112,7 +116,7 @@ class HangmanGame
   end
 
   def play_again?
-    answer = @prompt.yes? "Play Again?"
+    answer = @prompt.yes? " Play Again?"
     if answer
       CatagoryChoice.new @main_menu, @player
     else
