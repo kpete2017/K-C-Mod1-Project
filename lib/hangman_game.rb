@@ -8,6 +8,7 @@ class HangmanGame
     @banner = File.read "bannerfile.txt"
     @hangman = build_hangman
     @answer_word = answer_word
+    binding.pry
     @wrong_guesses = []
     @correct_guesses = []
     @hangman_position = 0
@@ -87,6 +88,8 @@ class HangmanGame
         print " "
       elsif character == "-"
         print "-"
+      elsif character == "'"
+        print "'"
       else
         print "_"
       end
@@ -104,6 +107,7 @@ class HangmanGame
     puts " The answer was #{@answer_word.titleize}"
     if @player != "Guest"
       @player.score += 1
+      @player.save
     end
     play_again?
   end
@@ -120,6 +124,7 @@ class HangmanGame
     if answer
       CatagoryChoice.new @main_menu, @player
     else
+
       @main_menu.show_main_menu
     end
   end

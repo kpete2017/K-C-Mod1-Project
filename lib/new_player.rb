@@ -15,7 +15,9 @@ class NewPlayer
     def intro
         puts "Welcome to Hangman! What should your wanted poster read?"
         name_input = gets.chomp
-        player = Player.new(name_input, @leaderboard, 0)
+        player = Player.create(name: name_input, score: 0)
+        player.leaderboard = @leaderboard
+        player.save
         CatagoryChoice.new @mainmenu, player
     end
 end

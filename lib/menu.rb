@@ -1,4 +1,3 @@
-
 class MainMenu
     def initialize leaderboard, player = "Guest"
         @player = player
@@ -27,12 +26,10 @@ class MainMenu
         elsif choice == "Play As New Player"
             NewPlayer.new @leaderboard, self
         elsif choice == "Play As Existing Player"
-            puts "Please Enter Your Name"
-            player_search = gets.chomp
-            @player = @leaderboard.find_player player_search
-            CatagoryChoice.new self, @player
+            FindPlayer.new @leaderboard, self
         elsif choice == "Leaderboard"
-            @leaderboard.show_leaderboard self
+            pl = PrintLeaderboard.new @leaderboard
+            pl.show_leaderboard self
         elsif choice == "EXIT"
             system 'exit'
             system 'clear'
