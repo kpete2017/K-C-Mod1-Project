@@ -22,8 +22,14 @@ class PrintLeaderboard
         end
     end
 
+    def organize_from_highest_score_to_lowest 
+        @leaderboard.players.sort_by do | player |
+            player.score
+        end.reverse
+    end
+
     def print_players
-        @leaderboard.players.each do |player|
+        organize_from_highest_score_to_lowest.each do |player|
             puts " NAME: #{player.name} | SCORE: #{player.score}"
         end    
     end

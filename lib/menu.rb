@@ -18,6 +18,7 @@ class MainMenu
             menu.choice 'Play As New Player'
             menu.choice 'Play As Existing Player'
             menu.choice 'Leaderboard'
+            menu.choice 'Manage Account'
             menu.choice 'EXIT'
         end
 
@@ -30,6 +31,8 @@ class MainMenu
         elsif choice == "Leaderboard"
             pl = PrintLeaderboard.new @leaderboard
             pl.show_leaderboard self
+        elsif choice == "Manage Account"
+            ManageAccount.new self
         elsif choice == "EXIT"
             system 'exit'
             system 'clear'
