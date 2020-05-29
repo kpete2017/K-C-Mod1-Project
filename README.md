@@ -1,12 +1,16 @@
-# superHangman!
+# Welcome to SuperHangman!
 
 ## Installation
-1. In your terminal run bundle install
-3. rake :db migrate
-4. rake :db seed
-5. ruby runner.rb
+To Run:
+1. Ruby must be installed
+2. Click "Clone or Download" from above
+3. Navigate to the directory where the program is installed from terminal
+4. In your terminal run bundle install
+5. rake :db migrate
+6. rake :db seed
+7. Finally to run the program type "ruby runner.rb"
 
-## Usage
+## Usage Instructions From Main Menu
 
 ### Play as Guest
 	1) The player will be prompted to select a category, at this point a random word will be selected
