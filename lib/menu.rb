@@ -9,9 +9,9 @@ class MainMenu
         system "clear"
         system "printf '\e[8;100;110t'" 
         prompt = TTY::Prompt.new
-        banner = File.read "bannerfile.txt"
+        banner = File.read "Banners/bannerfile.txt"
         puts banner.colorize :light_blue
-        menu_banner = File.read "menubanner.txt"
+        menu_banner = File.read "Banners/menubanner.txt"
 
         choice = prompt.select(menu_banner) do |menu|
             menu.choice 'Play As Guest'

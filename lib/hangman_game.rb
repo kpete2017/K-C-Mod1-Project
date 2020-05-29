@@ -1,11 +1,10 @@
-require 'pry'
 class HangmanGame
 
   def initialize answer_word, main_menu, player
     @player = player
     @main_menu = main_menu
     @prompt = TTY::Prompt.new
-    @banner = File.read "bannerfile.txt"
+    @banner = File.read "Banners/bannerfile.txt"
     @hangman = build_hangman
     @answer_word = answer_word
     binding.pry
@@ -102,7 +101,7 @@ class HangmanGame
   end
 
   def win_game
-    win_banner = File.read "win_banner.txt"
+    win_banner = File.read "Banners/win_banner.txt"
     puts win_banner.colorize :green
     puts " The answer was #{@answer_word.titleize}"
     if @player != "Guest"
@@ -113,7 +112,7 @@ class HangmanGame
   end
 
   def lose_game
-    lose_banner = File.read "lose_banner.txt"
+    lose_banner = File.read "Banners/lose_banner.txt"
     puts lose_banner.colorize :red
     puts " The answer was #{@answer_word.titleize}"
     play_again?

@@ -8,9 +8,9 @@ class PrintLeaderboard
     def show_leaderboard main_menu
         @main_menu = main_menu
         system 'clear'
-        banner = File.read "bannerfile.txt"
+        banner = File.read "Banners/bannerfile.txt"
         puts banner.colorize :light_blue
-        leaderbanner = File.read "leaderbannerfile.txt"  
+        leaderbanner = File.read "Banners/leaderbannerfile.txt"  
         puts leaderbanner
         print_players
         answer = @prompt.yes? "\n\n Main Menu?"

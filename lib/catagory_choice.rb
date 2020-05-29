@@ -4,8 +4,8 @@ class CatagoryChoice
         @main_menu = main_menu
         system 'clear'
         @prompt = TTY::Prompt.new
-        @banner = File.read "bannerfile.txt"
-        @category_banner = File.read "category_banner.txt"
+        @banner = File.read "Banners/bannerfile.txt"
+        @category_banner = File.read "Banners/category_banner.txt"
         puts @banner.colorize :light_blue
     
         choice = @prompt.select(@category_banner, per_page: 20) do |menu|

@@ -1,3 +1,4 @@
 class Player < ActiveRecord::Base
-    belongs_to :leaderboard
+    has_many :centers
+    has_many :leaderboards, through: :centers
 end
