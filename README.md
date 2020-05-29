@@ -1,6 +1,6 @@
 # superHangman!
 
-## installation
+## Installation
 1. In your terminal run bundle install
 3. rake :db migrate
 4. rake :db seed
