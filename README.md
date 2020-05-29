@@ -1,71 +1,55 @@
-# Mod 1 ActiveRecord Starter Repo
+# superHangman!
 
-In `config/database.yml`, you can change the name of the database from `db/cats.sqlite3` to whatever reflects your project. For example: `db/notes.sqlite3`. Doesn't really matter what you call the db. 
+## installation
+1. In your terminal run bundle install
+3. rake :db migrate
+4. rake :db seed
+5. ruby runner.rb
 
+## Usage
 
+### Play as Guest
+	1) The player will be prompted to select a category, at this point a random word will be selected
+	2) The game will begin with the player being asked to enter a character to guess
+	3) Upon making a correct letter choice the letter will appear in the row repenting the mystery word
+	4) If the player selects an incorrect letter a piece of the condemned soul will appear, as well as the incorrect letter will be shown in the wrong guesses section of the screen
+	5) The game is won by guessing all of the correct letters to the puzzle and the correct answer will be displayed
+	6) If the player should submit six incorrect guesses the condemned soul will be hung and the correct answer will be displayed
+	7) The player will be given a choice to play again
+	8) If the player should choose to play agin they will be presented with the choice of a new category
+	9) If the player should choose not to play agin the player will be returned to the main menu
 
-## ActiveRecord Methods
-These common ActiveRecord methods will help you interact with your database. Please refer to the ActiveRecord
-docs for what they do and how to use them. (If the docs talk about Rails, that is ok! ActiveRecord works very
- similar with or without Rails.)
-```
-  .create (.new, .save)
-  .all
-  .count
-  .find
-  .find_by
-  .where
-```
+### Play as New Player
+	1) The player will be greeted with the phrase “Welcome to Hangman! What should your wanted poster read?”
+	2) The player will enter the name of their choice
+	3) The player will be prompted to select a category, at this point a random word will be selected
+	4) The game will begin with the player being asked to enter a character to guess
+	5) Upon making a correct letter choice the letter will appear in the row repenting the mystery word
+	6) If the player selects an incorrect letter a piece of the condemned soul will appear, as well as the incorrect letter will be shown in the wrong guesses section of the screen
+	7) The game is won by guessing all of the correct letters to the puzzle and the correct answer will be displayed
+	8) If the player should submit six incorrect guesses the condemned soul will be hung and the correct answer will be displayed
+	9) The player will be given a choice to play again
+	10) If the player should choose to play agin they will be presented with the choice of a new category
+	11) If the player should choose not to play agin the player will be returned to the main menu
 
-#### Notes
-
-*Remember*, any model that will have a corresponding table in the database needs to inherit from `ActiveRecord::Base`
-ex:
-```
-class Cat < ActiveRecord::Base
-  # customer methods defined here
-end
-```
-
-- To view database, you can run `sqlite3 db/cats.db`, then can run `.schema` or `.tables` and can run any SQL commands. (Don't need to do this anymore though! ActiveRecord gives us a schema file!)
-
-
-### Steps to setup Ruby app with activerecord
-(New for ActiveRecord 6.0)
-
-
-## The following steps are already done for you in this boiler plate repo. 
-## The steps below are provided to you as a reference only. 
-## You're not expected to memorize this (please don't).
-
-
-1. In root of project, run `bundle init`
-1. Add gems: 
-  `bundle add activerecord pry sinatra, sinatra-activerecord rake sqlite3 require_all`
-  run `bundle install`
-1. mkdir config and lib 
-1. mkdir lib/models
-1. touch config/environment.rb config/database.yml
-1. Create your model files and models (make sure to have your models inherit from ActiveRecord::Base)
-1. In config/environment.rb:
-```
-  require 'bundler/setup'
-  Bundler.require
-
-  require_all 'lib'
-```
-1. In config/database.yml:
-  ```
-  development:
-    adapter: sqlite3
-    database: db/cats.sqlite3
-  ```
-1. Touch Rakefile - require ‘config/environment.rb’ and require_relative ‘sinatra/activerecord/rake’ 
-1. Run rake -T to make sure we have access to raketasks
-1. Run `rake db:create_migration NAME=create_cats_table` (will create the db folder if it doesn’t already exist) and will add the migration file to db/migration
-1. Write migration file, then run `rake db:migrate`
-1. Then can see schema in file structure, can also drop into sqlite3 cats.db to see the tables and schema, but don’t really need to do that anymore. *Review rollback here*
-1. Create seeds in db/seeds.rb and run `rake db:seed`
-1. Now can put a pry in environment.rb to run <ModelName>.all and see your seeds.
-
-Make sure your models inherit from `ActiveRecord::Base`
+### Play as Existing Player
+	1) The player will be gasket to enter their name
+	2) The player will enter the name they have used in previous games, case is not a factor
+	3) The player will be prompted to select a category, at this point a random word will be selected
+	4) The game will begin with the player being asked to enter a character to guess
+	5) Upon making a correct letter choice the letter will appear in the row repenting the mystery word
+	6) If the player selects an incorrect letter a piece of the condemned soul will appear, as well as the incorrect letter will be shown in the wrong guesses section of the screen
+	7) The game is won by guessing all of the correct letters to the puzzle and the correct answer will be displayed
+	8) If the player should submit six incorrect guesses the condemned soul will be hung and the correct answer will be displayed
+	9) The player will be given a choice to play again
+	10) If the player should choose to play agin they will be presented with the choice of a new category
+	11) If the player should choose not to play agin the player will be returned to the main menu
+ 
+### Leaderboard
+ 1) The player will be presented with a list of the current high scores for the game
+	2) The player will be asked if they would like to return to the main menu
+### Manage Account
+	1) The player will be promoted with “Hi! What would you like to do with your account?”
+	2) The player will be present with the choice to delete their account or to return to the main menu
+ ### Exit
+	1) The player will be returned to their terminal
