@@ -22,6 +22,8 @@ To Run:
 	7) The player will be given a choice to play again
 	8) If the player should choose to play agin they will be presented with the choice of a new category
 	9) If the player should choose not to play agin the player will be returned to the main menu
+	
+   ![](Gifs/Play_as_guest.gif)
 
 ### Play as New Player
 	1) The player will be greeted with the phrase “Welcome to Hangman! What should your wanted poster read?”
@@ -36,6 +38,8 @@ To Run:
 	10) If the player should choose to play agin they will be presented with the choice of a new category
 	11) If the player should choose not to play agin the player will be returned to the main menu
 
+   ![](Gifs/New_Player.gif)
+   
 ### Play as Existing Player
 	1) The player will be gasket to enter their name
 	2) The player will enter the name they have used in previous games, case is not a factor
@@ -49,13 +53,19 @@ To Run:
 	10) If the player should choose to play agin they will be presented with the choice of a new category
 	11) If the player should choose not to play agin the player will be returned to the main menu
 	
+![](Gifs/Existing_character.gif)
+
 ### Leaderboard
 	1) The player will be presented with a list of the current high scores for the game
 	2) The player will be asked if they would like to return to the main menu
 	
+![](Gifs/Leaderbaord.gif)
+
 ### Manage Account
 	1) The player will be promoted with “Hi! What would you like to do with your account?”
 	2) The player will be present with the choice to delete their account or to return to the main menu
 	
+![](Gifs/Manage_Player.gif)
+
  ### Exit
 	1) The player will be returned to their terminal
