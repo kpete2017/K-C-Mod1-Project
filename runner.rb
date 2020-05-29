@@ -1,6 +1,6 @@
 require_relative 'config/environment'
 
-Cli.new.start_game
-
-
+leaderboard = Leaderboard.first
+mm = MainMenu.new leaderboard
+mm.show_main_menu
 
