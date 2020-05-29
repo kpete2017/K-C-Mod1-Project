@@ -44,12 +44,14 @@
 	9) The player will be given a choice to play again
 	10) If the player should choose to play agin they will be presented with the choice of a new category
 	11) If the player should choose not to play agin the player will be returned to the main menu
- 
+	
 ### Leaderboard
- 1) The player will be presented with a list of the current high scores for the game
+	1) The player will be presented with a list of the current high scores for the game
 	2) The player will be asked if they would like to return to the main menu
+	
 ### Manage Account
 	1) The player will be promoted with “Hi! What would you like to do with your account?”
 	2) The player will be present with the choice to delete their account or to return to the main menu
+	
  ### Exit
 	1) The player will be returned to their terminal
