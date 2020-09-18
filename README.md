@@ -8,7 +8,7 @@ To Run:
 4. In your terminal run bundle install
 5. rake :db migrate
 6. rake :db seed
-7. Finally to run the program type "ruby runner.rb"
+7. Finally to run the program type "ruby runner.rb" and hit enter
 
 ## Usage Instructions From Main Menu
 
